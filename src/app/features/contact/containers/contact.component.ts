@@ -1,23 +1,18 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ContactService } from '../services/contact.service';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { Observable } from 'rxjs';
-import { Contact } from '../../models/contact.model';
+import { ContactFormComponent } from '../components/contact-form/contact-form.component';
+import { ContactElementComponent } from '../components/contact-element/contact-element.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [ContactFormComponent, ContactElementComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   private contactService = inject(ContactService);
-
-  public contacts$: Observable<Contact[]> = this.contactService.getContacts();
-  public contacts = toSignal(this.contacts$);
-
-  ngOnInit(): void {}
+  public contacts = this.contactService.contacts;
 }
 
 export default ContactComponent;
