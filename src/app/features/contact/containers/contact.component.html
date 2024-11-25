@@ -16,6 +16,10 @@
       @if (error()) {
       <p>{{ error() }}</p>
       }
+      <!-- No data -->
+      @if (!contacts().length && !loading() && !error()) {
+      <div>No data</div>
+      }
       <!-- Liste des contacts -->
       @for (contact of contacts(); track contact.id) {
       <app-contact-element [contact]="contact"></app-contact-element>

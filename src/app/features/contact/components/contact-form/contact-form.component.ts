@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -14,7 +14,6 @@ import { ContactService } from '../../services/contact.service';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent {
   private _fb = inject(FormBuilder);

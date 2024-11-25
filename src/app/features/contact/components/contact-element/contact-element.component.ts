@@ -7,7 +7,6 @@ import { ContactService } from '../../services/contact.service';
   standalone: true,
   imports: [],
   templateUrl: './contact-element.component.html',
-  styleUrl: './contact-element.component.scss',
 })
 export class ContactElementComponent {
   readonly contact = input<Contact>();
