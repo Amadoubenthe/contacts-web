@@ -8,11 +8,12 @@ import { ContactElementComponent } from '../components/contact-element/contact-e
   standalone: true,
   imports: [ContactFormComponent, ContactElementComponent],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
   private contactService = inject(ContactService);
   public contacts = this.contactService.contacts;
+  public loading = this.contactService.loading;
+  public error = this.contactService.error;
 }
 
 export default ContactComponent;
