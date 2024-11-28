@@ -12,11 +12,18 @@ export class ContactElementComponent {
   readonly contact = input<Contact>();
   private _contactService = inject(ContactService);
 
-  onDelete(id: string | undefined) {
-    if (id === undefined) {
+  onEdit(id: string | undefined) {
+    if (!id) {
       return;
     }
-    console.log('Method not implemented.', id);
+    console.log(`Update contact with id: ${id}`);
+  }
+
+  onDelete(id: string | undefined) {
+    if (!id) {
+      return;
+    }
+    console.log(`Delete contact with id: ${id}`);
     this._contactService.deleteContact(id).subscribe();
   }
 }

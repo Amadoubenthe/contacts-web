@@ -19,6 +19,7 @@ export class ContactService {
 
   public getContacts(): Observable<Contact[]> {
     this._loading.set(true);
+    this._error.set(null);
     return this._http.get<Contact[]>(`${this.baseUrl}/Contacts`).pipe(
       // Simulate a loading time
       delay(1000),
@@ -37,6 +38,7 @@ export class ContactService {
 
   public addContact(payload: ContactPayload): Observable<Contact> {
     this._loading.set(true);
+    this._error.set(null);
     return this._http.post<Contact>(`${this.baseUrl}/Contacts`, payload).pipe(
       catchError((error) => {
         console.error(`Error: ${error}`);
@@ -53,6 +55,7 @@ export class ContactService {
 
   public deleteContact(id: string): Observable<boolean> {
     this._loading.set(true);
+    this._error.set(null);
     return this._http.delete<boolean>(`${this.baseUrl}/contacts/${id}`).pipe(
       catchError((error) => {
         this._error.set('Erreur lors de la suppressiondu contact');
