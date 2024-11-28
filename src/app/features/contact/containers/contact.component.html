@@ -1,1 +1,29 @@
-<p>contact works!</p>
+<div class="container border m-auto">
+  <div class="flex flex-wrap w-[1300px] m-auto">
+    <div class="w-96 p-9">
+      <h2 class="text-2xl font-medium mb-4">Ajouter un contact</h2>
+      <app-contact-form></app-contact-form>
+    </div>
+
+    <div class="w-1/2 p-9 border">
+      <h2 class="text-2xl font-medium mb-4">Liste des contact</h2>
+
+      <!-- Loading -->
+      @if (loading()) {
+      <p>Loading...</p>
+      }
+      <!-- Error -->
+      @if (error()) {
+      <p>{{ error() }}</p>
+      }
+      <!-- No data -->
+      @if (!contacts().length && !loading() && !error()) {
+      <div>No data</div>
+      }
+      <!-- Liste des contacts -->
+      @for (contact of contacts(); track contact.id) {
+      <app-contact-element [contact]="contact"></app-contact-element>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<form [formGroup]="contactForm">
+  <div class="mb-4">
+    <label for="name" class="block text-lg font-medium text-gray-900"
+      >Nom</label
+    >
+    <div class="mt-2">
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Nom"
+        formControlName="name"
+        class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-lg"
+      />
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="email" class="block text-lg font-medium text-gray-900"
+      >Email address</label
+    >
+    <div class="mt-2">
+      <input
+        id="email"
+        name="email"
+        type="email"
+        formControlName="email"
+        placeholder="email"
+        class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-lg"
+      />
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="phone" class="block text-lg font-medium text-gray-900"
+      >Phone</label
+    >
+    <div class="mt-2">
+      <input
+        id="phone"
+        name="phone"
+        type="text"
+        formControlName="phone"
+        placeholder="Phone"
+        class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-lg"
+      />
+    </div>
+  </div>
+  <div class="relative flex gap-x-3 mb-4">
+    <div class="text-lg">
+      <label for="comments" class="font-medium text-gray-900">
+        <input
+          value="false"
+          type="checkbox"
+          name="favorite"
+          formControlName="favorite"
+        />
+        <span class="ml-2">Favorite</span>
+      </label>
+    </div>
+  </div>
+  <div>
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+      type="button"
+      (click)="onSubmit()"
+    >
+      Button
+    </button>
+  </div>
+</form>
