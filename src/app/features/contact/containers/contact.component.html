@@ -26,6 +26,12 @@
       @for (contact of contacts(); track contact.id) {
       <app-contact-element [contact]="contact"></app-contact-element>
       }
+
+      <!-- rerer -->
+      @for (region of regions(); track region.id) {
+      <p>{{ region.name }}</p>
+      <img src="{{ region.image }}" alt="eeee" />
+      }
     </div>
   </div>
 </div>

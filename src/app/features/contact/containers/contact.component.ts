@@ -15,8 +15,11 @@ export class ContactComponent implements OnInit {
   public loading = this._contactService.loading;
   public error = this._contactService.error;
 
+  public regions = this._contactService.regions;
+
   ngOnInit(): void {
-    this._contactService.getContacts().subscribe();
+    // this._contactService.getContacts().subscribe();
+    this._contactService.getRegions().subscribe();
   }
 }
 
